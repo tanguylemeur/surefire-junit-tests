@@ -7,23 +7,30 @@ public class ATest extends BaseTest {
 	public ATest(String param) {
 		super(param);
 	}
-
+	
 	@Test
 	public void methodA1() throws InterruptedException {
 		int sleepTime = 1;
 		
-		if (this.param.equals("p0")) {
-			sleepTime = 20;
-			System.out.println("sleeptime = " + sleepTime);
+		switch (this.param) {
+			case "p0":
+				sleepTime = 5;
+				break;
+			case "p1":
+				sleepTime = 2;
+				break;
+			case "p2":
+				sleepTime = 1;
+				break;
 		}
 		
+		debug("start", sleepTime);
 		Thread.sleep(sleepTime * 1000);
 		Assert.assertTrue("Successful test", true);
+		debug("stop", sleepTime);
 	}
 	
 	@Test
 	public void methodA2() throws InterruptedException {
-		Thread.sleep(2 * 1000);
-		Assert.assertTrue("Successful test", true);
 	}
 }
