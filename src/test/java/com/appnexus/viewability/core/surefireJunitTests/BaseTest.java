@@ -43,8 +43,8 @@ public abstract class BaseTest {
     }
     
 	@Parameters(name = "{0}")
-	public static ConcurrentLinkedQueue parameterList() throws Exception {
-		ConcurrentLinkedQueue q = new ConcurrentLinkedQueue();
+	public static ConcurrentLinkedQueue<String> parameterList() throws Exception {
+		ConcurrentLinkedQueue<String> q = new ConcurrentLinkedQueue<String>();
 		
 		for (int i=0 ; i <= 2; i++) {
 			q.add("p" + i);
