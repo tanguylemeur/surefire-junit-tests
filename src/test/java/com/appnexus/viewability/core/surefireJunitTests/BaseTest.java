@@ -15,7 +15,7 @@ import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
 public abstract class BaseTest {
-	protected static Path tmpDir = Paths.get("target/");
+	protected static Path tmpDir = Paths.get(System.getProperty("buildDirectory", "/tmp"));
 	protected String param;
 	
     @Rule

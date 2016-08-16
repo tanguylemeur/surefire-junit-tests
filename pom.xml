@@ -19,6 +19,9 @@
 					<configuration>
 						<threadCount>2</threadCount>
 						<parallel>all</parallel>
+						<systemPropertyVariables>
+            				<buildDirectory>${project.build.directory}</buildDirectory>
+          				</systemPropertyVariables>
 					</configuration>
 				</plugin>
 				<plugin>
