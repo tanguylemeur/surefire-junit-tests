@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import org.junit.Rule;
 import org.junit.rules.TestName;
@@ -11,8 +12,6 @@ import org.junit.runner.RunWith;
 
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-
-import edu.emory.mathcs.backport.java.util.concurrent.ConcurrentLinkedQueue;
 
 @RunWith(Parameterized.class)
 public abstract class BaseTest {
