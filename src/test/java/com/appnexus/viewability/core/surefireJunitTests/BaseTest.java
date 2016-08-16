@@ -1,16 +1,14 @@
 package com.appnexus.viewability.core.surefireJunitTests;
 
-import java.util.ArrayList;
-import java.util.Collection;
 
 import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 
-
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import edu.emory.mathcs.backport.java.util.concurrent.ConcurrentLinkedQueue;
 
 @RunWith(Parameterized.class)
 public abstract class BaseTest {
@@ -32,12 +30,13 @@ public abstract class BaseTest {
     }
 	
 	@Parameters(name = "{0}")
-	public static Collection<String> parameterList() throws Exception {
-		Collection<String> c = new ArrayList<String>();
+	public static ConcurrentLinkedQueue parameterList() throws Exception {
+		ConcurrentLinkedQueue q = new ConcurrentLinkedQueue();
+		
 		for (int i=0 ; i <= 2; i++) {
-			c.add("p" + i);
+			q.add("p" + i);
 		}
 		
-		return c;
+		return q;
 	}
 }
