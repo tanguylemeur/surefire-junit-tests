@@ -27,10 +27,12 @@ public class ATest extends BaseTest {
 		debug("start", sleepTime);
 		Thread.sleep(sleepTime * 1000);
 		Assert.assertTrue("Successful test", true);
+		writeFile();
 		debug("stop", sleepTime);
 	}
 	
 	@Test
 	public void methodA2() throws InterruptedException {
+		writeFile();
 	}
 }

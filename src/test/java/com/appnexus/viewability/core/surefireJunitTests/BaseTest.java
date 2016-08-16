@@ -1,5 +1,9 @@
 package com.appnexus.viewability.core.surefireJunitTests;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.junit.Rule;
 import org.junit.rules.TestName;
@@ -12,6 +16,7 @@ import edu.emory.mathcs.backport.java.util.concurrent.ConcurrentLinkedQueue;
 
 @RunWith(Parameterized.class)
 public abstract class BaseTest {
+	protected static Path tmpDir = Paths.get("/tmp/surefire-junit-test");
 	protected String param;
 	
     @Rule
@@ -29,6 +34,15 @@ public abstract class BaseTest {
     	System.out.println(this.getTestName() + " - " + this.param + " - sleeptime = " + sleepTime + " => " + state);
     }
 	
+    public void writeFile() {
+    	try {
+    		File file = new File(tmpDir + "/" + this.getTestName() + ".log");
+			file.createNewFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
 	@Parameters(name = "{0}")
 	public static ConcurrentLinkedQueue parameterList() throws Exception {
 		ConcurrentLinkedQueue q = new ConcurrentLinkedQueue();
