@@ -1,19 +1,21 @@
 package com.appnexus.viewability.core.surefireJunitTests;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 
-
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-
 @RunWith(Parameterized.class)
 public abstract class BaseTest {
+	protected static Path tmpDir = Paths.get(System.getProperty("buildDirectory", "/tmp"));
 	protected String param;
 	
     @Rule
@@ -31,13 +33,23 @@ public abstract class BaseTest {
     	System.out.println(this.getTestName() + " - " + this.param + " - sleeptime = " + sleepTime + " => " + state);
     }
 	
+    public void writeFile() {
+    	try {
+    		File file = new File(tmpDir + "/" + this.getTestName() + ".log");
+			file.createNewFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
 	@Parameters(name = "{0}")
-	public static Collection<String> parameterList() throws Exception {
-		Collection<String> c = new ArrayList<String>();
+	public static ConcurrentLinkedQueue<String> parameterList() throws Exception {
+		ConcurrentLinkedQueue<String> q = new ConcurrentLinkedQueue<String>();
+		
 		for (int i=0 ; i <= 2; i++) {
-			c.add("p" + i);
+			q.add("p" + i);
 		}
 		
-		return c;
+		return q;
 	}
 }

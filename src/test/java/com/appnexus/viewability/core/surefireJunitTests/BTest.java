@@ -10,9 +10,11 @@ public class BTest extends BaseTest {
 	
 	@Test
 	public void methodB1() throws InterruptedException {
+		writeFile();
 	}
 	
 	@Test
 	public void methodB2() throws InterruptedException {
+		writeFile();
 	}
 }
