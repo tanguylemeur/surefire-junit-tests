@@ -1,6 +1,5 @@
 package com.appnexus.viewability.core.surefireJunitTests;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 public class CTest extends BaseTest {
@@ -10,14 +9,11 @@ public class CTest extends BaseTest {
 
 	@Test
 	public void methodC1() throws InterruptedException {
-		Thread.sleep(1 * 1000);
-		Assert.assertTrue("Successful test", true);
+		sleep(1);
 	}
 		
 	@Test
 	public void methodC2() throws InterruptedException {
-		Thread.sleep(1 * 1000);
-		Assert.assertTrue("Successful test", true);
-//		Assert.assertTrue("Failing test param: " + this.param, false);
+		sleep(1);
 	}
 }

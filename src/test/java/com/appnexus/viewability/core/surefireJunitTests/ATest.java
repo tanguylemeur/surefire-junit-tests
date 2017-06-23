@@ -10,20 +10,12 @@ public class ATest extends BaseTest {
 
 	@Test
 	public void methodA1() throws InterruptedException {
-		int sleepTime = 1;
-		
-		if (this.param.equals("p0")) {
-			sleepTime = 20;
-			System.out.println("sleeptime = " + sleepTime);
-		}
-		
-		Thread.sleep(sleepTime * 1000);
-		Assert.assertTrue("Successful test", true);
+		sleep(1);
+		Assert.fail("Failing test: ATest.methodA1[" + param +"]");
 	}
 	
 	@Test
 	public void methodA2() throws InterruptedException {
-		Thread.sleep(2 * 1000);
-		Assert.assertTrue("Successful test", true);
+		sleep(2);
 	}
 }
