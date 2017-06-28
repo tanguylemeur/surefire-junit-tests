@@ -10,12 +10,13 @@ public class ATest extends BaseTest {
 
 	@Test
 	public void methodA1() throws InterruptedException {
-		sleep(1);
+		sleep(10);
 		Assert.fail("Failing test: ATest.methodA1[" + param +"]");
 	}
 	
 	@Test
 	public void methodA2() throws InterruptedException {
-		sleep(2);
+		sleep(10);
+		Assert.fail("Failing test: ATest.methodA2[" + param +"]");
 	}
 }

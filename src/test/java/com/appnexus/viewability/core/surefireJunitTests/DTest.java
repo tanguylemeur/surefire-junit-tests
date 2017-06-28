@@ -3,20 +3,20 @@ package com.appnexus.viewability.core.surefireJunitTests;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class CTest extends BaseTest {
-	public CTest(String param) {
+public class DTest extends BaseTest {
+	public DTest(String param) {
 		super(param);
 	}
 
 	@Test
 	public void methodC1() throws InterruptedException {
 		sleep(1);
-		Assert.fail("Failing test: CTest.methodC1[" + param +"]");
+		Assert.fail("Failing test: DTest.methodD1[" + param +"]");
 	}
 		
 	@Test
 	public void methodC2() throws InterruptedException {
 		sleep(1);
-		Assert.fail("Failing test: CTest.methodC2[" + param +"]");
+		Assert.fail("Failing test: DTest.methodD2[" + param +"]");
 	}
 }

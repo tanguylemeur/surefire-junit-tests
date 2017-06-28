@@ -26,10 +26,9 @@ public abstract class BaseTest {
 	@Parameters(name = "{0}")
 	public static Collection<String> parameterList() throws Exception {
 		Collection<String> c = new ArrayList<String>();
-		for (int i=0 ; i <= 2; i++) {
-			c.add("p" + i);
-		}
-		
+		c.add("p0");
+		c.add("p1");
+
 		return c;
 	}
 	
